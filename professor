@@ -1,0 +1,35 @@
+Professor, GPA required, Course Name and Sections
+William Moe
+CSE174
+ABC
+3.0
+B+
+sync: true
+
+Brandon Scott
+CSE271
+BCE
+3.3
+B+
+sync: false
+
+Anne Kellogg
+CSE274
+ADE
+3.9
+B+
+sync: true
+
+Daniel Holloway
+CSE374
+AC
+3.5
+A-
+sync: false
+
+Colton Lewis
+CSE201
+ABCD
+3.3
+B-
+sync: true
