@@ -5,7 +5,6 @@ import java.util.*;
 public class TARanger {
 
 	/**
-	 * 
 	 * @param args 
 	 * @throws FileNotFoundException Exception thrown if a file is not found
 	 */
@@ -38,15 +37,18 @@ public class TARanger {
 		} catch (Exception e) {
 			System.out.println("Some data fields might be empty");
 		}
+		
 		if (pDgpa == 0.0) {
 			System.out.println("Professor data not found");
 			return;
 		}
+		
 		// Check each student and store the matches in a Map.
 		Map<String, Integer> studentMap = new HashMap<>();
 		File obj = new File("Student");
 		Scanner sc1 = new Scanner(obj);
 		int c = 0;
+		
 		while (sc1.hasNextLine()) {
 			String x = sc1.nextLine();
 			if (pCourse.equals(x)) {
@@ -77,12 +79,15 @@ public class TARanger {
 				studentMap.put(sName, sRank);
 			}
 		}
+		
 		// Sort the Map based on the values
 		LinkedHashMap<String, Integer> sortedStudentMap = new LinkedHashMap<>();
 		studentMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 				.forEachOrdered(x -> sortedStudentMap.put(x.getKey(), x.getValue()));
+		
 		System.out.println("Following are the best TA applicants (in order) for \nProfessor " + pName + " in course " + pCourse);
 		String format = "%-20s %5d\n";
+		
 		// Print the sorted values
 		for (String name : sortedStudentMap.keySet()) {
 			String key = name.toString();
@@ -173,6 +178,7 @@ public class TARanger {
 			if (sGrade.equals(gradeList[i]))
 				sindex = i;
 		}
+		
 		if (sindex <= index)
 			gradeRank = 20;
 		else if (sindex == index + 1)
@@ -211,6 +217,7 @@ public class TARanger {
 			if (timeRank == 0)
 				timeRank = -1000;
 		}
+		
 		// Calculates the value for office hours
 		for (int i = 0; i < sTimeSlot.length; i++) {
 			int dash = sTimeSlot[i].indexOf('-');
