@@ -1,2 +1,2 @@
-# CSE374-TA-Ranger
+# TA-Ranger
 An optimized solution for arranging and reviewing TA (Teaching Assistant) applications.
